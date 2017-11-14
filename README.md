@@ -8,7 +8,7 @@ Use it as a starter project for simple diagraming applications.
 Run the following commands on terminal:
 
 ```sh
-git clone https://github.com/suhaybimagine/imagination.git
+git clone https://github.com/suhaybimagine/div-diagram.git
 npm install
 npm run dev
 ```
