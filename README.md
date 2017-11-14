@@ -1,7 +1,7 @@
-# imagination
-Starter Kit for Front-End application include setup for Webpack, React, PaperJS and many more.
+# DIV-Diagram
+Sample project to demonstrate the possibility of building diagrams using only DOM elements.
 
-Use it to start developing Front-End applications.
+Use it as a starter project for simple diagraming applications.
 
 ### Running Locally (Development Mode)
 

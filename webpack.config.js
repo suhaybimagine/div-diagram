@@ -13,6 +13,13 @@ let rules = [
             plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy']
         }
     },
+    { 
+        test: /\.(png|jpg)$/, 
+        loader: 'file-loader',
+        options: {
+          outputPath: 'img/'
+        }
+    },
     { test: /\.txt$/, use: 'raw-loader' }
 ];
 
@@ -26,7 +33,7 @@ if (debug) {
     rules.push({
         test: /\.css$/,
         loader: 'css-loader',
-        options: { modules: true  }
+        options: { modules: true }
     });
 
 } else {
@@ -53,7 +60,7 @@ module.exports = {
     module: { rules: rules },
     output: {
         path: path.resolve(__dirname, 'dist/release'),
-        publicPath: "release",
+        publicPath: "release/",
         filename: 'app.min.js'
     },
     plugins: debug ? [
