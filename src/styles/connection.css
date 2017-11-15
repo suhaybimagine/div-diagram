@@ -1,0 +1,8 @@
+
+.connection {
+
+    display: block;
+    position: absolute;
+
+    z-index: 0;
+}
