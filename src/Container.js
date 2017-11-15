@@ -51,13 +51,13 @@ export default class Container extends React.Component {
             let ml = off.left + w;
             let mt = off.top + h;
 
-            maxL = (ml > maxL) ? ml : maxL;
-            maxT = (mt > maxT) ? mt : maxT;
+            maxL = (ml > maxL) ? ml + 20 : maxL;
+            maxT = (mt > maxT) ? mt + 20 : maxT;
 
             minL = (off.left < minL) ? off.left : minL;
             minT = (off.top < minT) ? off.top : minT;
         });
-
+        
         if (minL < 0) {
             $(node).children().each((i, elm) => {
                 var pos = $(elm).offset();
@@ -81,8 +81,8 @@ export default class Container extends React.Component {
             minT = 0;
         }
 
-        $(node).css("min-width", maxL + minL + 20);
-        $(node).css("min-height", maxT + minT + 20);
+        $(node).css("min-width", maxL + minL);
+        $(node).css("min-height", maxT + minT);
     }
 
     render() {
