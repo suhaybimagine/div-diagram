@@ -1,10 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import dispatcher from "./Dispatcher";
 import Connection from "./Connection";
 import Box from "./Box";
 import css from "./styles/container.css";
 
 export default class Container extends React.Component {
+
+    componentWillReceiveProps(newProps){
+        this.setState({model: newProps.model});
+    }
+
+    componentWillMount(){
+        this.regId = dispatcher.register(this.handleActions);
+        this.setState({model: this.props.model});
+    }
+
+    componentWillUnmount(){
+        dispatcher.unregister(this.regId);
+    } 
+
+    handleActions = (action) => {
+
+        if(action.type == "MODEL_UPDATED") {
+            this.forceUpdate();
+        }
+    }
 
     componentDidMount() {
         this.measureContentSize();
@@ -66,7 +87,7 @@ export default class Container extends React.Component {
 
     render() {
 
-        let { model } = this.props;
+        let { model } = this.state;
 
         let connections = [];
         let boxes = model.boxes.map((item, i) => {

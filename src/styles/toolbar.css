@@ -1,0 +1,19 @@
+
+.toolbar {
+
+    padding: 10px 0 0 10px;
+}
+
+.button {
+
+    display: inline-block;
+    background: lightgray;
+
+    width: auto;
+    padding: 10px 10px 10px 10px;
+    font-size: 13pt;
+}
+
+.button:hover {
+    background: #eee;
+}
